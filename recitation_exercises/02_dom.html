@@ -18,6 +18,38 @@
 	 * JavaScript. Note the CSS styling provided above.
 	 */
 	// Your code starts here
+	
+	document.addEventListener("DOMContentLoaded", () => {
+		document.getElementById("addButton").addEventListener("click", () => {
+			
+			// get text value
+			let inText = document.getElementById("theText").value;
+
+			// check for valid input?
+			if (inText) {
+
+				// create div element
+				let newDiv = document.createElement("div");
+				newDiv.innerText = msg;
+
+				//get color
+				if (document.getElementById("red").checked) {
+					newDiv.style.backgroundColor = "red";
+				} else if (document.getElementById("green").checked) {
+					newDiv.style.backgroundColor = "green";
+				} else if (document.getElementById("blue").checked) {
+					newDiv.style.backgroundColor = "blue";
+				}
+
+				// add div to html document
+				document.getElementById("theForm").appendChild(newDiv);
+			}
+		})
+	})
+
+	
+
+
 	// End your code
 </script>
 </head>
